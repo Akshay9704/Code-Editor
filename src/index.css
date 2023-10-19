@@ -1,13 +1,103 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#input {
+  width: 50%;
+  margin-top: 30px;
+  margin-left: 40px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.input_label {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.input_warning {
+  margin-bottom: 12px;
+  color: grey;
+}
+
+.input_fileName {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.input_blocks {
+  display: flex;
+  gap: 10px;
+  width: 35%;
+}
+
+.Files {
+  display: flex;
+  gap: 25px;
+  margin-top: 35px;
+  justify-content: center;
+}
+
+.Files_content {
+  width: 30%;
+}
+
+.Files_label {
+  display: flex;
+  gap: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.Files_blocks {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.Files_btn {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+
+.output {
+  margin: auto;
+  margin-top: 5%;
+  width: 90%;
+}
+
+.output_fileName {
+  width: 100%;
+  border: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.output_label {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 768px) {
+  #input {
+    width: 80%;
+  }
+  .input_blocks {
+    width: 80%;
+  }
+  .Files {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%
+  }
+  .Files_content {
+    width: 95%;
+  }
 }

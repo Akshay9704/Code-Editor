@@ -261,8 +261,10 @@ const Main = () => {
       {/* OUTPUT BOX */}
       <div className="output">
         <h1 className="output_label">OUTPUT:</h1>
-        <iframe id="outputFrame" className="output_fileName"></iframe>{" "}
-        {/* Output iframe */}
+        <div className="outputContainer">
+          {/* Output iframe */}
+          <iframe id="outputFrame" className="output_fileName"></iframe>{" "}
+        </div>
       </div>
     </div>
   );

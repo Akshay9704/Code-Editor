@@ -64,7 +64,6 @@
   margin-bottom: 10px;
 }
 
-
 .output {
   margin: auto;
   margin-top: 5%;
@@ -75,6 +74,11 @@
   width: 100%;
   border: 1px solid black;
   margin-bottom: 10px;
+}
+
+.outputContainer {
+  height: 300px;
+  overflow: auto; /* Use "scroll" */
 }
 
 .output_label {

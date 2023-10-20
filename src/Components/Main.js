@@ -110,6 +110,27 @@ const Main = () => {
     outputWindow.eval(js);
   };
 
+  // Adding Spaces in Textarea by pressing Tab key
+  const handleTabKey = (id, e) => {
+    if (e.key === "Tab") {
+      e.preventDefault();
+      const updatedFileInput = { ...fileInput };
+      updatedFileInput[id] = e.target.value;
+      const start = e.target.selectionStart;
+      const end = e.target.selectionEnd;
+      const spaces = "   ";
+      
+      // Insert spaces into the updatedFileInput
+      updatedFileInput[id] =
+        updatedFileInput[id].substring(0, start) +
+        spaces +
+        updatedFileInput[id].substring(end);
+      
+      setFileInput(updatedFileInput);
+      e.target.setSelectionRange(start + spaces.length, start + spaces.length);
+    }
+  };
+        
   // Lock/Unlock a specific file by using disabled inbuild functionality
   const lockHandler = (id) => {
     const isLocked = lock[id] || false;
@@ -249,6 +270,7 @@ const Main = () => {
                 aria-label="Default"
                 aria-describedby="inputGroup-sizing-default"
                 value={fileInput[File.id] || ""} /* Updated */
+                onKeyDown={(e) => handleTabKey(File.id, e)} /* Tab Functionality */
                 onChange={(e) =>
                   inputChange(File.id, e)
                 } /* It will update the value */
